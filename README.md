@@ -13,15 +13,17 @@ CSV から JSON に変換する処理速度を比較するプロジェクト。
 
 ## 準備
 
-1. Visual Studio 2022 で CsvJsonConvertinSpeedTest.sln のプロジェクトを全てビルドする。
+1. Visual Studio 2022 で CsvJsonConvertinSpeedTest.sln の ToJson プロジェクトをビルドする。
 1. Python をインストールする。
 1. コマンドプロンプトで `pip install pandas` を実行して、 Python で使用するライブラリーをインストールする。
 
 ## 確認方法
 
 1. リポジトリー直下の bin ディレクトリーに移動する。
-1. TestDataOutput.exe を起動する。
-    1. データ数に任意の数字を入力して、CSV出力ボタンをクリックする。
+~~1. TestDataOutput.exe を起動する。~~
+    ~~1. データ数に任意の数字を入力して、CSV出力ボタンをクリックする。~~
+    ~~1.  test.csv ファイルが作成されている事を確認する。~~
+1. data.py.bat を実行する。
     1.  test.csv ファイルが作成されている事を確認する。
 1. 下記ファイルを実行して、コンソールに出力される処理結果を比較する。
     1. ToJson.exe (C#。出力ファイル名は「result.csharp.json」。)
