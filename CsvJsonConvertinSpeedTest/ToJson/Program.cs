@@ -13,7 +13,7 @@ var result = lines.Select(x => x.Split(','))
     .GroupBy(x => x[0])
     .Select(g => new ResultData(g.Key, g.Sum(x => MultiplyToInt(double.Parse(x[2]), double.Parse(x[3])))));
 
-using (FileStream file = File.OpenWrite("result.json"))
+using (FileStream file = File.OpenWrite("result.csharp.json"))
 {
     JsonSerializer.Serialize(file, result, SourceGenerationContext.Default.IEnumerableResultData);
 }
