@@ -8,8 +8,11 @@ using System.Text.Json.Serialization;
 var stopwatch = new Stopwatch();
 stopwatch.Start();
 
-var lines = File.ReadLines("test.csv").Skip(1);
-var result = lines.Select(x => x.Split(','))
+var lines = File.ReadAllLines("test.csv");
+var result = lines
+    .Skip(1)
+    .AsParallel()
+    .Select(x => x.Split(','))
     .GroupBy(x => x[0])
     .Select(g => new ResultData(g.Key, g.Sum(x => MultiplyToInt(double.Parse(x[2]), double.Parse(x[3])))));
 
